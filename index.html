@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'det')">det</button>
-  <button class="tablinks" onclick="openCity(event, 'noun')">noun</button>
-  <button class="tablinks" onclick="openCity(event, 'adj')">adj</button>
-</div>
-
-<!-- Tab content -->
-<div id="det" class="tabcontent">
-  <h3>Determinants</h3>
-</div>
-
-<div id="noun" class="tabcontent">
-  <h3>Nouns</h3>
-</div>
-
-<div id="adj" class="tabcontent">
-  <h3>Adjectives</h3>
-</div>
-
-
-
-
-<script>
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
+<style>
+* {
+  box-sizing: border-box;
 }
-</script>
-   
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+.left {
+  width: 35%;
+}
+.mid {
+  width: 15%;
+}
+
+.right {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="row">
+    <div class="column left" style="background-color:#aaa;">
+      <h2>Column 1</h2>
+      <p>Some text..</p>
+    </div>
+    <div class="column mid">
+      <h2>Column 2</h2>
+      <p>Some text..</p>
+    </div>
+    <div class="column right" style="background-color:#bbb;">
+      <h2>Column 2</h2>
+      <p>Some text..</p>
+    </div>
+  </div>
 </body>
 </html> 
